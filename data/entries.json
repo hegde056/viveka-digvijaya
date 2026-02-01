@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.1",
+  "project": "Viveka Digvijaya",
+  "entries": [
+    {
+      "id": "1897-01-16-colombo-first-address",
+      "date": "1897-01-16",
+      "year": 1897,
+      "slug": "colombo-first-address",
+      
+      "location": {
+        "point": { "lat": 6.9340, "lon": 79.8520 },
+        "display_name": "Colombo, Ceylon",
+        "historical_name": "Floral Hall, Colombo",
+        "region": {
+          "macro": "East",
+          "subregion": "South Asia"
+        }
+      },
+
+      "content": {
+        "title_i18n": {
+          "en": "First Address in Colombo"
+        },
+        "subtitle_i18n": {
+          "en": "India, The Sacred Land"
+        },
+
+        "file_path_template": "data/texts/{lang}/colombo-first-address-1897.md",
+        "available_langs": ["en"],
+
+        "category": {
+          "type": ["lecture"],
+          "tags": ["return-to-india", "spirituality", "vedanta"]
+        }
+      },
+
+      "media" : null,
+
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 103,
+        "quote_range": "pp. 103–115",
+        "publisher": "Advaita Ashrama",
+        "edition": "Mayavati Memorial Edition"
+      },
+
+      "journey": {
+        "arrival_mode": "sea",
+        "prev_id": null,
+        "next_id": "1897-01-24-jaffna-vedantism"
+      }
+    },
+    {
+      "id": "1897-01-24-jaffna-vedantism",
+      "date": "1897-01-24",
+      "year": 1897,
+      "slug": "jaffna-vedantism",
+      "location": {
+        "point": { "lat": 9.6615, "lon": 80.0255 },
+        "display_name": "Jaffna, Ceylon",
+        "historical_name": "Jaffna, British Ceylon",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "title_i18n": { "en": "Vedantism" },
+        "subtitle_i18n": { "en": "The Essence of the Vedas" },
+        "file_path_template": "data/texts/{lang}/jaffna-vedantism-1897.md",
+        "available_langs": ["en"],
+        "category": { 
+          "type": ["lecture"], 
+          "tags": ["vedanta", "philosophy", "identity"] 
+        }
+      },
+      "media": null,
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 118,
+        "quote_range": "pp. 118–135",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-01-16-colombo-first-address",
+        "next_id": "1897-01-26-pamban-landing"
+      }
+    },
+    {
+      "id": "1897-01-26-pamban-landing",
+      "date": "1897-01-26",
+      "year": 1897,
+      "slug": "pamban-landing",
+      "location": {
+        "point": { "lat": 9.2778, "lon": 79.2131 },
+        "display_name": "Pamban, India",
+        "historical_name": "Pamban Island, Madras Presidency",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "title_i18n": { "en": "Landing on Indian Soil" },
+        "subtitle_i18n": { "en": "Reply to the Welcome by the Raja of Ramnad" },
+        "file_path_template": "data/texts/{lang}/pamban-address-1897.md", 
+        "available_langs": ["en"],
+        "category": { "type": ["travel"], "tags": ["motherland", "reception"] }
+      },
+      "media": null,
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 136,
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "boat",
+        "prev_id": "1897-01-24-jaffna-vedantism",
+        "next_id": "1897-01-27-rameswaram-address"
+      }
+    },
+    {
+      "id": "1897-01-27-rameswaram-address",
+      "date": "1897-01-27",
+      "year": 1897,
+      "slug": "rameswaram-address",
+      "location": {
+        "point": { "lat": 9.2881, "lon": 79.3174 },
+        "display_name": "Rameswaram, India",
+        "historical_name": "Rameswaram Temple",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "title_i18n": { "en": "Address at Rameswaram" },
+        "subtitle_i18n": { "en": "Real Worship" },
+        "file_path_template": "data/texts/{lang}/rameshwaram-real-worship-1897.md",
+        "available_langs": ["en"],
+        "category": { "type": ["lecture"], "tags": ["shiva", "bhakti", "temple"] }
+      },
+      "media": null,
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 141,
+        "quote_range": "pp. 141–144",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-01-26-pamban-landing",
+        "next_id": "1897-01-29-ramnad-address"
+      }
+    } 
+  ]    
+}

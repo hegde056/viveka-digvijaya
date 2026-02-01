@@ -1,26 +1,39 @@
-// 1. Define the limits of the world (Latitude -90 to 90, Longitude -180 to 180)
-var corner1 = L.latLng(-90, -180);
-var corner2 = L.latLng(90, 180);
-var bounds = L.latLngBounds(corner1, corner2);
+// js/map.js
 
-// 2. Initialize the map with wrapping disabled
+// 1. World Bounds
+var bounds = L.latLngBounds(L.latLng(-90, -180), L.latLng(90, 180));
+
+// 2. Map Init
 var map = L.map('map', {
     center: [20.5937, 78.9629],
     zoom: 4,
-    maxBounds: bounds,            // Stops the user from dragging outside the world
-    maxBoundsViscosity: 1.0,      // Makes the edges "hard" (the map won't bounce back)
-    worldCopyJump: false          // Disables the infinite horizontal wrap
+    maxBounds: bounds,
+    maxBoundsViscosity: 1.0,
+    worldCopyJump: false
 }).setView([20.5937, 78.9629], 4);
 
 window.map = map;
 
-// 3. Update your Tile Layer to also stop wrapping
+// 3. TILE LAYERS (Choose one)
+// OPTION A: Current Voyager
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; CARTO',
-    maxZoom: 19,
-    noWrap: true,                 // This stops the images themselves from repeating
-    bounds: bounds                // Forces tiles to stay within world limits
+    noWrap: true,
+    bounds: bounds
 }).addTo(map);
+
+/* // OPTION B: Satellite View (Uncomment to use)
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri',
+    noWrap: true
+}).addTo(map);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png', {
+    pane: 'markerPane',
+    opacity: 0.9,
+    pointerEvents: 'none'
+}).addTo(map);
+*/
 
 var saffronIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
@@ -31,75 +44,71 @@ var saffronIcon = new L.Icon({
     shadowSize: [41, 41]
 });
 
-fetch('data/locations.json')
+var currentLang = 'en';
+
+fetch('data/entries.json')
     .then(res => res.json())
     .then(data => {
         var allMarkers = [];
 
-        data.forEach(point => {
-            allMarkers.push([point.lat, point.lng]);
-            var marker = L.marker([point.lat, point.lng], {icon: saffronIcon}).addTo(map);
+        data.entries.forEach(item => {
+            const lat = item.location.point.lat;
+            const lng = item.location.point.lon;
+            allMarkers.push([lat, lng]);
+
+            var marker = L.marker([lat, lng], {icon: saffronIcon}).addTo(map);
 
             marker.on('click', function() {
-                const isAlreadyOpen = document.body.classList.contains('sidebar-open');
-
-                if (!isAlreadyOpen) {
-                    // FIRST CLICK: Shift the layout
+                // Layout logic
+                if (!document.body.classList.contains('sidebar-open')) {
                     document.body.classList.add('sidebar-open');
                     document.getElementById('sidebar').classList.add('active');
-
-                    // Resize and center just this once
                     setTimeout(() => {
                         map.invalidateSize();
                         map.panTo(marker.getLatLng(), { animate: true });
                     }, 360);
-                } else {
-                    // SUBSEQUENT CLICKS: 
-                    // We do NOTHING to the map. No panTo, no jumping.
-                    // The map stays exactly where it is.
                 }
-                // Move the ruler indicator
-                updateRuler(point.date);
-                // ALWAYS update the content
-                document.getElementById('sidebar-title').innerText = point.title;
-                document.getElementById('sidebar-date').innerText = point.date + " | " + point.location;
+
+                // Call the function from timeline.js
+                updateRuler(item.date);
+
+                // UI & Fetch logic
+                const title = item.content.title_i18n[currentLang] || item.content.title_i18n['en'];
+                document.getElementById('sidebar-title').innerText = title;
+                document.getElementById('sidebar-date').innerText = item.date + " | " + item.location.display_name;
                 document.getElementById('sidebar-body').innerHTML = "<em>Loading article...</em>";
                 
-                fetch(`data/articles/${point.filename}`)
-                    .then(res => res.text())
-                    .then(text => {
-                        document.getElementById('sidebar-body').innerHTML = text.replace(/\n/g, '<br><br>');
-                        // Optional: Reset scroll position to top of article
-                        document.getElementById('sidebar').scrollTop = 0;
-                    })
-                    .catch(err => {
-                        document.getElementById('sidebar-body').innerHTML = "Error loading article.";
-                    });
+                if (item.content.file_path_template) {
+                    const finalPath = item.content.file_path_template.replace('{lang}', currentLang);
+                    fetch(finalPath)
+                        .then(res => res.text())
+                        .then(text => {
+                            let content = text.replace(/\n/g, '<br><br>');
+                            if (item.source) {
+                                content += `<hr style="margin-top:40px; border:0; border-top:1px solid #ddd;">
+                                            <div style="font-size: 0.85em; color: #666; font-style: italic;">
+                                            Source: ${item.source.work}, Vol ${item.source.volume}, ${item.source.quote_range || 'p. ' + item.source.page}
+                                            </div>`;
+                            }
+                            document.getElementById('sidebar-body').innerHTML = content;
+                            document.getElementById('sidebar').scrollTop = 0;
+                        });
+                }
             });
         });
 
         if (allMarkers.length > 0) map.fitBounds(allMarkers, {padding: [50, 50]});
     });
 
-// Close sidebar when clicking anywhere on the map background
-map.on('click', function(e) {
-    // Only close if the sidebar is actually open
+// Close sidebar listener
+map.on('click', function() {
     if (document.body.classList.contains('sidebar-open')) {
-        closeSidebar(); // This calls the function in your index.html
+        if (typeof closeSidebar === "function") {
+            closeSidebar();
+        } else {
+            document.body.classList.remove('sidebar-open');
+            document.getElementById('sidebar').classList.remove('active');
+            setTimeout(() => { map.invalidateSize(); }, 360);
+        }
     }
 });
-
-function updateRuler(dateString) {
-    const year = parseInt(dateString.split('-')[0]);
-    const startYear = 1863;
-    const endYear = 1902;
-    const totalYears = endYear - startYear;
-    
-    // Calculate percentage across the ruler
-    let percentage = ((year - startYear) / totalYears) * 100;
-    
-    // Safety check to keep needle within 0-100%
-    percentage = Math.max(0, Math.min(100, percentage));
-    
-    document.getElementById('year-indicator').style.left = percentage + "%";
-}

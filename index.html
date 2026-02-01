@@ -12,11 +12,31 @@
     <div id="map">
         <div id="timeline-container">
             <div id="ruler">
-                <div class="tick" style="left: 0%;"><span>1863</span></div>
-                <div class="tick" style="left: 25%;"><span>1873</span></div>
-                <div class="tick" style="left: 50%;"><span>1883</span></div>
-                <div class="tick" style="left: 75%;"><span>1893</span></div>
-                <div class="tick" style="left: 100%;"><span>1902</span></div>
+                <div class="tick major" style="left: 0%;"><span>1863</span></div>
+                <div class="tick minor" style="left: 5%;"></div>
+                <div class="tick major" style="left: 10%;"><span>1867</span></div>
+                <div class="tick minor" style="left: 15%;"></div>
+                <div class="tick major" style="left: 20%;"><span>1871</span></div>
+                
+                <div class="tick minor" style="left: 25%;"></div> 
+                <div class="tick major" style="left: 30%;"><span>1875</span></div>
+                <div class="tick minor" style="left: 35%;"></div>
+                <div class="tick major" style="left: 40%;"><span>1879</span></div>
+                <div class="tick minor" style="left: 45%;"></div>
+                
+                <div class="tick major" style="left: 50%;"><span>1883</span></div>
+                <div class="tick minor" style="left: 55%;"></div>
+                <div class="tick major" style="left: 60%;"><span>1887</span></div>
+                <div class="tick minor" style="left: 65%;"></div>
+                <div class="tick major" style="left: 70%;"><span>1891</span></div>
+                
+                <div class="tick minor" style="left: 75%;"></div>
+                <div class="tick major" style="left: 80%;"><span>1895</span></div>
+                <div class="tick minor" style="left: 85%;"></div>
+                <div class="tick major" style="left: 90%;"><span>1899</span></div>
+                <div class="tick minor" style="left: 95%;"></div>
+                <div class="tick major" style="left: 100%;"><span>1902</span></div>
+                
                 <div id="year-indicator"></div>
             </div>
         </div>
@@ -32,6 +52,7 @@
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/timeline.js"></script>
     <script src="js/map.js"></script>
 
     <script>
