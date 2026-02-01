@@ -58,7 +58,8 @@ fetch('data/locations.json')
                     // We do NOTHING to the map. No panTo, no jumping.
                     // The map stays exactly where it is.
                 }
-
+                // Move the ruler indicator
+                updateRuler(point.date);
                 // ALWAYS update the content
                 document.getElementById('sidebar-title').innerText = point.title;
                 document.getElementById('sidebar-date').innerText = point.date + " | " + point.location;
@@ -87,3 +88,18 @@ map.on('click', function(e) {
         closeSidebar(); // This calls the function in your index.html
     }
 });
+
+function updateRuler(dateString) {
+    const year = parseInt(dateString.split('-')[0]);
+    const startYear = 1863;
+    const endYear = 1902;
+    const totalYears = endYear - startYear;
+    
+    // Calculate percentage across the ruler
+    let percentage = ((year - startYear) / totalYears) * 100;
+    
+    // Safety check to keep needle within 0-100%
+    percentage = Math.max(0, Math.min(100, percentage));
+    
+    document.getElementById('year-indicator').style.left = percentage + "%";
+}
