@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vivekananda Atlas</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Garamond:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <div id="map">
+        <div id="site-header">Viveka Digvijaya</div>
         <div id="timeline-container">
             <div id="ruler">
                 <div class="tick major" style="left: 0%;"><span>1863</span></div>
@@ -46,6 +50,7 @@
         <button id="close-btn" onclick="closeSidebar()">×</button>
         <div id="sidebar-content">
             <h1 id="sidebar-title">Title</h1>
+            <h3 id="sidebar-subtitle">Subtitle</h3>
             <h4 id="sidebar-date">Date | Location</h4>
             <div id="sidebar-body">Loading...</div>
         </div>

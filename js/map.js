@@ -7,22 +7,29 @@ var bounds = L.latLngBounds(L.latLng(-90, -180), L.latLng(90, 180));
 var map = L.map('map', {
     center: [20.5937, 78.9629],
     zoom: 4,
+    minZoom: 3,
     maxBounds: bounds,
     maxBoundsViscosity: 1.0,
-    worldCopyJump: false
+    worldCopyJump: false,
+    zoomControl: false
 }).setView([20.5937, 78.9629], 4);
+
+// Add zoom control to bottom-left
+L.control.zoom({
+    position: 'bottomleft'
+}).addTo(map);
 
 window.map = map;
 
 // 3. TILE LAYERS (Choose one)
 // OPTION A: Current Voyager
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+/* L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; CARTO',
     noWrap: true,
     bounds: bounds
-}).addTo(map);
+}).addTo(map); */
 
-/* // OPTION B: Satellite View (Uncomment to use)
+// OPTION B: Satellite View
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Tiles &copy; Esri',
     noWrap: true
@@ -33,7 +40,6 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{
     opacity: 0.9,
     pointerEvents: 'none'
 }).addTo(map);
-*/
 
 var saffronIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
@@ -74,12 +80,35 @@ fetch('data/entries.json')
 
                 // UI & Fetch logic
                 const title = item.content.title_i18n[currentLang] || item.content.title_i18n['en'];
+                const subtitle = item.content.subtitle_i18n[currentLang] || item.content.subtitle_i18n['en'];
                 document.getElementById('sidebar-title').innerText = title;
-                document.getElementById('sidebar-date').innerText = item.date + " | " + item.location.display_name;
-                document.getElementById('sidebar-body').innerHTML = "<em>Loading article...</em>";
+                document.getElementById('sidebar-subtitle').innerText = subtitle;
                 
-                if (item.content.file_path_template) {
-                    const finalPath = item.content.file_path_template.replace('{lang}', currentLang);
+                // Convert date to DD-MM-YYYY format
+                const [year, month, day] = item.date.split('-');
+                const formattedDate = `${day}-${month}-${year}`;
+                document.getElementById('sidebar-date').innerText = formattedDate + " | " + item.location.display_name;
+                
+                // Handle image gallery items
+                if (item.content.image_path) {
+                    const imageCaption = item.content.caption_i18n[currentLang] || item.content.caption_i18n['en'];
+                    let galleryHTML = `<img src="${item.content.image_path}" style="width: 60%; max-width: 300px; height: auto; border-radius: 6px; margin-bottom: 20px;">`;
+                    if (imageCaption) {
+                        galleryHTML += `<p style="font-size: 0.9em; color: #666; font-style: italic; margin-top: 10px;">${imageCaption}</p>`;
+                    }
+                    if (item.source) {
+                        galleryHTML += `<hr style="margin-top:40px; border:0; border-top:1px solid #ddd;">
+                                        <div style="font-size: 0.85em; color: #666; font-style: italic;">
+                                        Source: ${item.source.work}${item.source.volume ? ', Vol ' + item.source.volume : ''}${item.source.page ? ', p. ' + item.source.page : ''}${item.source.accession_id ? '<br>Accession: ' + item.source.accession_id : ''}
+                                        </div>`;
+                    }
+                    document.getElementById('sidebar-body').innerHTML = galleryHTML;
+                    document.getElementById('sidebar').scrollTop = 0;
+                }
+                // Handle text/lecture items
+                else if (item.content.text_path) {
+                    document.getElementById('sidebar-body').innerHTML = "<em>Loading article...</em>";
+                    const finalPath = item.content.text_path.replace('{lang}', currentLang);
                     fetch(finalPath)
                         .then(res => res.text())
                         .then(text => {
