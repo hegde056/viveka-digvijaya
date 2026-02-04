@@ -50,6 +50,10 @@ var saffronIcon = new L.Icon({
     shadowSize: [41, 41]
 });
 
+// Store all markers globally for highlighting
+window.allMarkers = {};
+window.currentHighlightedMarker = null;
+
 var currentLang = 'en';
 
 // Load chapters index and then load all chapter files
@@ -64,77 +68,58 @@ fetch('data/chapters.json')
         return Promise.all(chapterPromises);
     })
     .then(chapters => {
+        // Initialize UI system with all chapters
+        if (window.vivekaUI) {
+            window.vivekaUI.init(chapters);
+        }
+        
         var allMarkers = [];
         
-        // Combine all entries from all chapters
-        const allEntries = chapters.flatMap(chapter => chapter.entries || []);
+        // Process each chapter with its color
+        chapters.forEach((chapter) => {
+            const chapterColor = chapter.color || 'orange';
+            
+            // Create colored icon for this chapter
+            const coloredIcon = new L.Icon({
+                iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${chapterColor}.png`,
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            });
+            
+            // Create highlighted version (larger)
+            const highlightedIcon = new L.Icon({
+                iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${chapterColor}.png`,
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                iconSize: [35, 57],
+                iconAnchor: [17, 57],
+                popupAnchor: [1, -47],
+                shadowSize: [57, 57]
+            });
+            
+            // Add entries from this chapter
+            (chapter.entries || []).forEach(item => {
+                const lat = item.location.point.lat;
+                const lng = item.location.point.lon;
+                allMarkers.push([lat, lng]);
 
-        allEntries.forEach(item => {
-            const lat = item.location.point.lat;
-            const lng = item.location.point.lon;
-            allMarkers.push([lat, lng]);
-
-            var marker = L.marker([lat, lng], {icon: saffronIcon}).addTo(map);
-
-            marker.on('click', function() {
-                // Layout logic
-                if (!document.body.classList.contains('sidebar-open')) {
-                    document.body.classList.add('sidebar-open');
-                    document.getElementById('sidebar').classList.add('active');
-                    setTimeout(() => {
-                        map.invalidateSize();
-                        map.panTo(marker.getLatLng(), { animate: true });
-                    }, 360);
-                }
-
-                // Call the function from timeline.js
-                updateRuler(item.date);
-
-                // UI & Fetch logic
-                const title = item.content.title_i18n[currentLang] || item.content.title_i18n['en'];
-                const subtitle = item.content.subtitle_i18n[currentLang] || item.content.subtitle_i18n['en'];
-                document.getElementById('sidebar-title').innerText = title;
-                document.getElementById('sidebar-subtitle').innerText = subtitle;
+                var marker = L.marker([lat, lng], {icon: coloredIcon}).addTo(map);
                 
-                // Convert date to DD-MM-YYYY format
-                const [year, month, day] = item.date.split('-');
-                const formattedDate = `${day}-${month}-${year}`;
-                document.getElementById('sidebar-date').innerText = formattedDate + " | " + item.location.display_name;
-                
-                // Handle image gallery items
-                if (item.content.image_path) {
-                    const imageCaption = item.content.caption_i18n[currentLang] || item.content.caption_i18n['en'];
-                    let galleryHTML = `<img src="${item.content.image_path}" style="width: 60%; max-width: 300px; height: auto; border-radius: 6px; margin-bottom: 20px;">`;
-                    if (imageCaption) {
-                        galleryHTML += `<p style="font-size: 0.9em; color: #666; font-style: italic; margin-top: 10px;">${imageCaption}</p>`;
+                // Store marker reference with its icons
+                window.allMarkers[item.slug] = {
+                    marker: marker,
+                    normalIcon: coloredIcon,
+                    highlightIcon: highlightedIcon
+                };
+
+                marker.on('click', function() {
+                    // Use the UI system to display the entry
+                    if (window.vivekaUI) {
+                        window.vivekaUI.setSlug(item.slug);
                     }
-                    if (item.source) {
-                        galleryHTML += `<hr style="margin-top:40px; border:0; border-top:1px solid #ddd;">
-                                        <div style="font-size: 0.85em; color: #666; font-style: italic;">
-                                        Source: ${item.source.work}${item.source.volume ? ', Vol ' + item.source.volume : ''}${item.source.page ? ', p. ' + item.source.page : ''}${item.source.accession_id ? '<br>Accession: ' + item.source.accession_id : ''}
-                                        </div>`;
-                    }
-                    document.getElementById('sidebar-body').innerHTML = galleryHTML;
-                    document.getElementById('sidebar').scrollTop = 0;
-                }
-                // Handle text/lecture items
-                else if (item.content.text_path) {
-                    document.getElementById('sidebar-body').innerHTML = "<em>Loading article...</em>";
-                    const finalPath = item.content.text_path.replace('{lang}', currentLang);
-                    fetch(finalPath)
-                        .then(res => res.text())
-                        .then(text => {
-                            let content = text.replace(/\n/g, '<br><br>');
-                            if (item.source) {
-                                content += `<hr style="margin-top:40px; border:0; border-top:1px solid #ddd;">
-                                            <div style="font-size: 0.85em; color: #666; font-style: italic;">
-                                            Source: ${item.source.work}, Vol ${item.source.volume}, ${item.source.quote_range || 'p. ' + item.source.page}
-                                            </div>`;
-                            }
-                            document.getElementById('sidebar-body').innerHTML = content;
-                            document.getElementById('sidebar').scrollTop = 0;
-                        });
-                }
+                });
             });
         });
 

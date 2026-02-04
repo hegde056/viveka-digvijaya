@@ -58,12 +58,24 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/timeline.js"></script>
+    <script src="js/ui.js"></script>
     <script src="js/map.js"></script>
 
     <script>
         function closeSidebar() {
             document.body.classList.remove('sidebar-open');
             document.getElementById('sidebar').classList.remove('active');
+            
+            // Clear URL hash (go to home)
+            history.pushState("", document.title, window.location.pathname + window.location.search);
+            
+            // Unhighlight marker
+            if (window.currentHighlightedMarker && window.allMarkers[window.currentHighlightedMarker]) {
+                const current = window.allMarkers[window.currentHighlightedMarker];
+                current.marker.setIcon(current.normalIcon);
+                current.marker.setZIndexOffset(0);
+                window.currentHighlightedMarker = null;
+            }
             
             // Wait for CSS transition (0.35s) then fix the map
             setTimeout(() => {
