@@ -1,8 +1,80 @@
 {
   "schema_version": "1.1",
+  "color": "grey",
   "chapter_id": "05_final_years_india_1901-1902",
   "chapter_title": "Final Years in India",
   "period": "1901–1902",
   "description": "The final chapter at Belur Math and pilgrimages across India, culminating in the Mahasamadhi at Belur Math on July 4, 1902.",
-  "entries": []
+  "entries": [
+    {
+      "sl_num": 1,
+      "id": "1901-03-30-dacca-what-learnt",
+      "date": "1901-03-30",
+      "date_precision": "exact",
+      "year": 1901,
+      "slug": "dacca-what-learnt",
+      "location": {
+        "point": { "lat": 23.8103, "lon": 90.4125 },
+        "display_name": "Dacca (Dhaka), Bengal",
+        "historical_name": "Dacca, Bengal Presidency",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "What Have I Learnt?" },
+        "subtitle_i18n": { "en": "Reflections from the West" },
+        "text_path": "data/texts/{lang}/dacca-what-learnt-1901.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["reflection", "west", "learning", "comparative"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 288,
+        "quote_range": "pp. 288-293",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "train",
+        "prev_id": "1899-06-19-belur-sannyasa",
+        "next_id": "1901-03-31-dacca-religion-born-in"
+      }
+    },
+    {
+      "sl_num": 2,
+      "id": "1901-03-31-dacca-religion-born-in",
+      "date": "1901-03-31",
+      "date_precision": "exact",
+      "year": 1901,
+      "slug": "dacca-religion-born-in",
+      "location": {
+        "point": { "lat": 23.8103, "lon": 90.4125 },
+        "display_name": "Dacca (Dhaka), Bengal",
+        "historical_name": "Open-air meeting, Dacca",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "The Religion We Are Born In" },
+        "subtitle_i18n": { "en": "Hindu Identity and Heritage" },
+        "text_path": "data/texts/{lang}/dacca-religion-born-in-1901.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["hinduism", "identity", "heritage", "pride"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 294,
+        "quote_range": "pp. 294-298",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1901-03-30-dacca-what-learnt",
+        "next_id": null
+      }
+    }
+  ]
 }

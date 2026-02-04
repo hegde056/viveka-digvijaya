@@ -1,5 +1,6 @@
 {
   "schema_version": "1.1",
+  "color": "green",
   "chapter_id": "03_return_to_india_1897-1899",
   "chapter_title": "Return to India",
   "period": "1897–1899",
@@ -7,41 +8,26 @@
   "entries": [
     {
       "sl_num": 1,
-      "id": "1897-01-16-colombo-first-address",
-      "date": "1897-01-16",
+      "id": "1897-01-15-colombo-first-address",
+      "date": "1897-01-15",
+      "date_precision": "exact",
       "year": 1897,
       "slug": "colombo-first-address",
-      
       "location": {
         "point": { "lat": 6.9340, "lon": 79.8520 },
         "display_name": "Colombo, Ceylon",
         "historical_name": "Floral Hall, Colombo",
-        "region": {
-          "macro": "East",
-          "subregion": "South Asia"
-        }
+        "region": { "macro": "East", "subregion": "South Asia" }
       },
-
       "content": {
         "available_langs": ["en"],
-        "title_i18n": {
-          "en": "First Address in Colombo"
-        },
-        "subtitle_i18n": {
-          "en": "India, The Sacred Land"
-        },
-
+        "title_i18n": { "en": "India, the Holy Land" },
+        "subtitle_i18n": { "en": "First Address in Colombo" },
         "text_path": "data/texts/{lang}/colombo-first-address-1897.md",
-        
-        "image_path" : null,
+        "image_path": null,
         "caption_i18n": null,
-
-        "category": {
-          "type": ["lecture"],
-          "tags": ["return-to-india", "spirituality", "vedanta"]
-        }
+        "category": { "type": ["lecture"], "tags": ["return-to-india", "spirituality", "vedanta"] }
       },
-
       "source": {
         "work": "Complete Works of Swami Vivekananda",
         "volume": 3,
@@ -50,17 +36,17 @@
         "publisher": "Advaita Ashrama",
         "edition": "Mayavati Memorial Edition"
       },
-
       "journey": {
         "arrival_mode": "sea",
         "prev_id": null,
-        "next_id": "1897-01-24-jaffna-vedantism"
+        "next_id": "1897-01-21-jaffna-vedantism"
       }
     },
     {
       "sl_num": 2,
-      "id": "1897-01-24-jaffna-vedantism",
-      "date": "1897-01-24",
+      "id": "1897-01-21-jaffna-vedantism",
+      "date": "1897-01-21",
+      "date_precision": "approximate",
       "year": 1897,
       "slug": "jaffna-vedantism",
       "location": {
@@ -76,10 +62,7 @@
         "text_path": "data/texts/{lang}/jaffna-vedantism-1897.md",
         "image_path": null,
         "caption_i18n": null,
-        "category": { 
-          "type": ["lecture"], 
-          "tags": ["vedanta", "philosophy", "identity"] 
-        }
+        "category": { "type": ["lecture"], "tags": ["vedanta", "philosophy", "identity"] }
       },
       "source": {
         "work": "Complete Works of Swami Vivekananda",
@@ -90,14 +73,15 @@
       },
       "journey": {
         "arrival_mode": "land",
-        "prev_id": "1897-01-16-colombo-first-address",
-        "next_id": "1897-01-26-pamban-landing"
+        "prev_id": "1897-01-15-colombo-first-address",
+        "next_id": "1897-01-25-pamban-landing"
       }
     },
     {
       "sl_num": 3,
-      "id": "1897-01-26-pamban-landing",
-      "date": "1897-01-26",
+      "id": "1897-01-25-pamban-landing",
+      "date": "1897-01-25",
+      "date_precision": "approximate",
       "year": 1897,
       "slug": "pamban-landing",
       "location": {
@@ -108,8 +92,8 @@
       },
       "content": {
         "available_langs": ["en"],
-        "title_i18n": { "en": "Landing on Indian Soil" },
-        "subtitle_i18n": { "en": "Reply to the Welcome by the Raja of Ramnad" },
+        "title_i18n": { "en": "Reply to the Address of Welcome at Pamban" },
+        "subtitle_i18n": { "en": "Landing on Indian Soil" },
         "text_path": "data/texts/{lang}/pamban-address-1897.md",
         "image_path": null,
         "caption_i18n": null,
@@ -123,14 +107,15 @@
       },
       "journey": {
         "arrival_mode": "boat",
-        "prev_id": "1897-01-24-jaffna-vedantism",
-        "next_id": "1897-01-27-rameswaram-address"
+        "prev_id": "1897-01-21-jaffna-vedantism",
+        "next_id": "1897-01-25-rameswaram-address"
       }
     },
     {
       "sl_num": 4,
-      "id": "1897-01-27-rameswaram-address",
-      "date": "1897-01-27",
+      "id": "1897-01-25-rameswaram-address",
+      "date": "1897-01-25",
+      "date_precision": "approximate",
       "year": 1897,
       "slug": "rameswaram-address",
       "location": {
@@ -157,14 +142,469 @@
       },
       "journey": {
         "arrival_mode": "land",
-        "prev_id": "1897-01-26-pamban-landing",
-        "next_id": "1897-01-29-ramnad-address"
+        "prev_id": "1897-01-25-pamban-landing",
+        "next_id": "1897-01-25-ramnad-address"
       }
     },
     {
       "sl_num": 5,
-      "id": "1898-06-01-almora-address",
+      "id": "1897-01-25-ramnad-address",
+      "date": "1897-01-25",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "ramnad-address",
+      "location": {
+        "point": { "lat": 9.3710, "lon": 78.8340 },
+        "display_name": "Ramnad, Tamil Nadu",
+        "historical_name": "Ramnad Palace",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Reply to the Address of Welcome at Ramnad" },
+        "subtitle_i18n": { "en": "Hosted by the Raja of Ramnad" },
+        "text_path": "data/texts/{lang}/ramnad-address-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["national-awakening", "welcome", "south-india"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 145,
+        "quote_range": "pp. 145-146",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-01-25-rameswaram-address",
+        "next_id": "1897-01-27-paramakudi-address"
+      }
+    },
+    {
+      "sl_num": 6,
+      "id": "1897-01-27-paramakudi-address",
+      "date": "1897-01-27",
+      "date_precision": "approximate",
+      "year": 1897,
+      "slug": "paramakudi-address",
+      "location": {
+        "point": { "lat": 9.5433, "lon": 78.5909 },
+        "display_name": "Paramakudi, Tamil Nadu",
+        "historical_name": "Paramakudi",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Reply to the Address of Welcome at Paramakudi" },
+        "subtitle_i18n": { "en": "En Route to Madurai" },
+        "text_path": "data/texts/{lang}/paramakudi-address-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["welcome", "south-india"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 147,
+        "quote_range": "pp. 147-151",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-01-25-ramnad-address",
+        "next_id": "1897-01-29-manamadura-address"
+      }
+    },
+    {
+      "sl_num": 7,
+      "id": "1897-01-29-manamadura-address",
+      "date": "1897-01-29",
+      "date_precision": "approximate",
+      "year": 1897,
+      "slug": "manamadura-address",
+      "location": {
+        "point": { "lat": 9.7042, "lon": 78.4522 },
+        "display_name": "Manamadura, Tamil Nadu",
+        "historical_name": "Manamadura",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Reply to the Address of Welcome at Shivaganga and Manamadura" },
+        "subtitle_i18n": { "en": "En Route to Madurai" },
+        "text_path": "data/texts/{lang}/manamadura-address-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["welcome", "south-india", "national-regeneration"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": null,
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-01-27-paramakudi-address",
+        "next_id": "1897-02-01-madurai-address"
+      }
+    },
+    {
+      "sl_num": 8,
+      "id": "1897-02-01-madurai-address",
+      "date": "1897-02-01",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "madurai-address",
+      "location": {
+        "point": { "lat": 9.9252, "lon": 78.1198 },
+        "display_name": "Madurai, Tamil Nadu",
+        "historical_name": "Thirumalai Nayak Palace",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Reply to the Address of Welcome at Madura" },
+        "subtitle_i18n": { "en": "Madurai - The Temple City" },
+        "text_path": "data/texts/{lang}/madurai-address-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["welcome", "south-india", "temple-city"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 152,
+        "quote_range": "pp. 152-155",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "train",
+        "prev_id": "1897-01-29-manamadura-address",
+        "next_id": "1897-02-04-kumbakonam-address"
+      }
+    },
+    {
+      "sl_num": 9,
+      "id": "1897-02-04-kumbakonam-address",
+      "date": "1897-02-04",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "kumbakonam-address",
+      "location": {
+        "point": { "lat": 10.9598, "lon": 79.3881 },
+        "display_name": "Kumbakonam, Tamil Nadu",
+        "historical_name": "Public Hall, Kumbakonam",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "The Mission of the Vedanta" },
+        "subtitle_i18n": { "en": "At Temple Town of Learning" },
+        "text_path": "data/texts/{lang}/kumbakonam-address-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["vedanta", "mission", "philosophy"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 156,
+        "quote_range": "pp. 156-184",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "train",
+        "prev_id": "1897-02-01-madurai-address",
+        "next_id": "1897-02-06-madras-arrival"
+      }
+    },
+    {
+      "sl_num": 10,
+      "id": "1897-02-06-madras-arrival",
+      "date": "1897-02-06",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "madras-arrival",
+      "location": {
+        "point": { "lat": 13.0822, "lon": 80.2707 },
+        "display_name": "Madras (Chennai), Tamil Nadu",
+        "historical_name": "Castle Kernan / Victoria Hall",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Reply to the Address of Welcome at Madras" },
+        "subtitle_i18n": { "en": "The Gateway to South India" },
+        "text_path": "data/texts/{lang}/madras-welcome-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["madras", "welcome", "south-india"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 185,
+        "quote_range": "pp. 185-189",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "train",
+        "prev_id": "1897-02-04-kumbakonam-address",
+        "next_id": "1897-02-09-madras-plan-campaign"
+      }
+    },
+    {
+      "sl_num": 11,
+      "id": "1897-02-09-madras-plan-campaign",
+      "date": "1897-02-09",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "madras-plan-campaign",
+      "location": {
+        "point": { "lat": 13.0834, "lon": 80.2707 },
+        "display_name": "Madras (Chennai), Tamil Nadu",
+        "historical_name": "Victoria Hall, Madras",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "My Plan of Campaign" },
+        "subtitle_i18n": { "en": "Strategy for National Regeneration" },
+        "text_path": "data/texts/{lang}/madras-plan-campaign-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["social-reform", "strategy", "practical-vedanta"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 190,
+        "quote_range": "pp. 190-196",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-02-06-madras-arrival",
+        "next_id": "1897-02-11-madras-vedanta-application"
+      }
+    },
+    {
+      "sl_num": 12,
+      "id": "1897-02-11-madras-vedanta-application",
+      "date": "1897-02-11",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "madras-vedanta-application",
+      "location": {
+        "point": { "lat": 13.0832, "lon": 80.2713 },
+        "display_name": "Madras (Chennai), Tamil Nadu",
+        "historical_name": "Victoria Hall, Madras",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Vedanta in its Application to Indian Life" },
+        "subtitle_i18n": { "en": "Practical Philosophy for India" },
+        "text_path": "data/texts/{lang}/madras-vedanta-application-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["practical-vedanta", "indian-life", "philosophy"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 197,
+        "quote_range": "pp. 197-210",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-02-09-madras-plan-campaign",
+        "next_id": "1897-02-14-madras-sages"
+      }
+    },
+    {
+      "sl_num": 13,
+      "id": "1897-02-14-madras-sages",
+      "date": "1897-02-14",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "madras-sages",
+      "location": {
+        "point": { "lat": 13.0827, "lon": 80.2714 },
+        "display_name": "Madras (Chennai), Tamil Nadu",
+        "historical_name": "Victoria Hall, Madras",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "The Sages of India" },
+        "subtitle_i18n": { "en": "Ancient Wisdom Keepers" },
+        "text_path": "data/texts/{lang}/madras-sages-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["rishis", "ancient-wisdom", "philosophy"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 211,
+        "quote_range": "pp. 211-226",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-02-11-madras-vedanta-application",
+        "next_id": "1897-02-16-madras-work-before-us"
+      }
+    },
+    {
+      "sl_num": 14,
+      "id": "1897-02-16-madras-work-before-us",
+      "date": "1897-02-16",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "madras-work-before-us",
+      "location": {
+        "point": { "lat": 13.0827, "lon": 80.2713 },
+        "display_name": "Madras (Chennai), Tamil Nadu",
+        "historical_name": "Triplicane Literary Society, Madras",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "The Work Before Us" },
+        "subtitle_i18n": { "en": "National Reconstruction" },
+        "text_path": "data/texts/{lang}/madras-work-before-us-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["social-work", "national-service", "reform"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 227,
+        "quote_range": "pp. 227-243",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-02-14-madras-sages",
+        "next_id": "1897-02-18-madras-future-india"
+      }
+    },
+    {
+      "sl_num": 15,
+      "id": "1897-02-18-madras-future-india",
+      "date": "1897-02-18",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "madras-future-india",
+      "location": {
+        "point": { "lat": 13.0820, "lon": 80.2707 },
+        "display_name": "Madras (Chennai), Tamil Nadu",
+        "historical_name": "Victoria Hall, Madras",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "The Future of India" },
+        "subtitle_i18n": { "en": "Vision for the Nation" },
+        "text_path": "data/texts/{lang}/madras-future-india-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["future", "nationalism", "vision"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 244,
+        "quote_range": "pp. 244-260",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-02-16-madras-work-before-us",
+        "next_id": "1897-02-22-madras-charity"
+      }
+    },
+    {
+      "sl_num": 16,
+      "id": "1897-02-22-madras-charity",
+      "date": "1897-02-22",
+      "date_precision": "approximate",
+      "year": 1897,
+      "slug": "madras-charity",
+      "location": {
+        "point": { "lat": 13.0826, "lon": 80.2701 },
+        "display_name": "Madras (Chennai), Tamil Nadu",
+        "historical_name": "Victoria Hall, Madras",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "On Charity" },
+        "subtitle_i18n": { "en": "True Service to Humanity" },
+        "text_path": "data/texts/{lang}/madras-charity-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["charity", "service", "daridra-narayana"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 261,
+        "quote_range": "pp. 261-271",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-02-18-madras-future-india",
+        "next_id": "1897-02-28-calcutta-arrival"
+      }
+    },
+    {
+      "sl_num": 17,
+      "id": "1897-02-28-calcutta-arrival",
+      "date": "1897-02-28",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "calcutta-arrival",
+      "location": {
+        "point": { "lat": 22.5726, "lon": 88.3639 },
+        "display_name": "Calcutta (Kolkata), West Bengal",
+        "historical_name": "Sealdah Station / Town Hall",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Address of Welcome at Calcutta and Reply" },
+        "subtitle_i18n": { "en": "Return to the City of Joy" },
+        "text_path": null,
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["calcutta", "welcome", "bengal"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 272,
+        "quote_range": "pp. 272-278",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "train",
+        "prev_id": "1897-02-22-madras-charity",
+        "next_id": null
+      }
+    },
+    {
+      "sl_num": 18,
+      "id": "1897-06-01-almora-address",
       "date": "1898-06-01",
+      "date_precision": "month-only",
       "year": 1898,
       "slug": "almora-address",
       "location": {
@@ -177,7 +617,7 @@
         "available_langs": ["en"],
         "title_i18n": { "en": "Address at Almora" },
         "subtitle_i18n": { "en": "Thoughts on Indian Spirituality" },
-        "text_path": "data/texts/{lang}/almora-address-1898.md",
+        "text_path": "data/texts/{lang}/almora-address-1897.md",
         "image_path": null,
         "caption_i18n": null,
         "category": { "type": ["lecture"], "tags": ["himalayas", "spirituality", "mountains"] }
@@ -186,6 +626,284 @@
         "work": "Complete Works of Swami Vivekananda",
         "volume": 5,
         "page": 1,
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": null,
+        "next_id": null
+      }
+    },
+{
+      "sl_num": 19,
+      "id": "1898-06-15-almora-vedic-theory-practice",
+      "date": "1898-06-15",
+      "date_precision": "approximate",
+      "year": 1898,
+      "slug": "almora-vedic-theory-practice",
+      "location": {
+        "point": { "lat": 29.5892, "lon": 79.6401 },
+        "display_name": "Almora, India",
+        "historical_name": "Almora, United Provinces",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Vedic Theory and Practice" },
+        "subtitle_i18n": { "en": "Application of Ancient Wisdom" },
+        "text_path": "data/texts/{lang}/almora-vedic-theory-practice-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["vedas", "theory", "practice", "himalayas", "spirituality"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 5,
+        "page": null,
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-06-01-almora-address",
+        "next_id": "1897-11-01-sialkot-bhakti"
+      }
+    },
+    {
+      "sl_num": 20,
+      "id": "1897-11-01-sialkot-bhakti",
+      "date": "1897-11-01",
+      "date_precision": "approximate",
+      "year": 1897,
+      "slug": "sialkot-bhakti",
+      "location": {
+        "point": { "lat": 32.4972, "lon": 74.5361 },
+        "display_name": "Sialkot, Punjab",
+        "historical_name": "Sialkot",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Bhakti" },
+        "subtitle_i18n": { "en": "Punjab Tour" },
+        "text_path": "data/texts/{lang}/sialkot-bhakti-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["sialkot", "punjab", "bhakti"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 377,
+        "quote_range": "pp. 377-391",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "train",
+        "prev_id": "1897-10-30-lahore-arrival",
+        "next_id": "1897-11-09-lahore-common-bases"
+      }
+    },
+    {
+      "sl_num": 21,
+      "id": "1897-11-09-lahore-common-bases",
+      "date": "1897-11-09",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "lahore-common-bases",
+      "location": {
+        "point": { "lat": 31.5594, "lon": 74.3217 },
+        "display_name": "Lahore, Punjab",
+        "historical_name": "Haveli of Raja Dhyan Singh, Lahore",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "The Common Bases of Hinduism" },
+        "subtitle_i18n": { "en": "First Lecture at Lahore" },
+        "text_path": "data/texts/{lang}/lahore-common-bases-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["hinduism", "unity", "philosophy", "punjab"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 299,
+        "quote_range": "pp. 299-319",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-10-30-lahore-arrival",
+        "next_id": "1897-11-09-lahore-bhakti"
+      }
+    },
+    {
+      "sl_num": 22,
+      "id": "1897-11-09-lahore-bhakti",
+      "date": "1897-11-09",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "lahore-bhakti",
+      "location": {
+        "point": { "lat": 31.5622, "lon": 74.3141 },
+        "display_name": "Lahore, Punjab",
+        "historical_name": "Sanatana Dharma Sabha, Lahore",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Bhakti" },
+        "subtitle_i18n": { "en": "Second Lecture at Lahore" },
+        "text_path": "data/texts/{lang}/lahore-bhakti-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["bhakti", "devotion", "love", "punjab"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 320,
+        "quote_range": "pp. 320-334",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-11-09-lahore-common-bases",
+        "next_id": "1897-11-10-sialkot-bhakti"
+      }
+    },
+    {
+      "sl_num": 23,
+      "id": "1897-11-12-lahore-vedanta",
+      "date": "1897-11-12",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "lahore-vedanta",
+      "location": {
+        "point": { "lat": 31.5689, "lon": 74.3055 },
+        "display_name": "Lahore, Punjab",
+        "historical_name": "Prof. Bose's Circus Pandal, Lahore",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "The Vedanta" },
+        "subtitle_i18n": { "en": "Third Lecture at Lahore (The Famous Lecture)" },
+        "text_path": "data/texts/{lang}/lahore-vedanta-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["vedanta", "punjab", "philosophy"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 361,
+        "quote_range": "pp. 361-376",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-11-09-lahore-bhakti",
+        "next_id": "1897-11-12-amritsar-lecture"
+      }
+    },
+    {
+      "sl_num": 24,
+      "id": "1897-12-20-khetri-vedantism",
+      "date": "1897-12-20",
+      "date_precision": "exact",
+      "year": 1897,
+      "slug": "khetri-vedantism",
+      "location": {
+        "point": { "lat": 28.1267, "lon": 75.3950 },
+        "display_name": "Khetri, Rajasthan",
+        "historical_name": "Maharaja's Bungalow, Khetri",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Vedantism" },
+        "subtitle_i18n": { "en": "Lecture at the Maharaja's Bungalow" },
+        "text_path": "data/texts/{lang}/khetri-vedantism-1897.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["vedantism", "khetri", "rajasthan", "royal-patronage"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": null,
+        "page": null,
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "train",
+        "prev_id": null,
+        "next_id": null
+      }
+    },
+    {
+      "sl_num": 25,
+      "id": "1898-03-11-calcutta-influence",
+      "date": "1898-03-11",
+      "date_precision": "exact",
+      "year": 1898,
+      "slug": "calcutta-influence",
+      "location": {
+        "point": { "lat": 22.5726, "lon": 88.3639 },
+        "display_name": "Calcutta (Kolkata), West Bengal",
+        "historical_name": "Calcutta",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "The Influence of Indian Spiritual Thought in England" },
+        "subtitle_i18n": { "en": "Lecture by Sister Nivedita, Presided by Swamiji" },
+        "text_path": "data/texts/{lang}/calcutta-influence-1898.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["west", "influence", "spiritual-thought", "england", "nivedita"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 279,
+        "quote_range": "pp. 279-282",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": "1897-02-28-calcutta-arrival",
+        "next_id": null
+      }
+    },
+    {
+      "sl_num": 26,
+      "id": "1899-06-19-belur-math-sannyasa",
+      "date": "1899-06-19",
+      "date_precision": "exact",
+      "year": 1899,
+      "slug": "belur-math-sannyasa",
+      "location": {
+        "point": { "lat": 22.6328, "lon": 88.3565 },
+        "display_name": "Belur Math, West Bengal",
+        "historical_name": "Belur Math",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Sannyasa: Its Ideal and Practice" },
+        "subtitle_i18n": { "en": "Parting Address to Junior Sannyasins" },
+        "text_path": "data/texts/{lang}/belur-math-sannyasa-1898.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["sannyasa", "renunciation", "monasticism", "ideal", "belur-math"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 3,
+        "page": 283,
+        "quote_range": "pp. 283-287",
         "publisher": "Advaita Ashrama"
       },
       "journey": {
