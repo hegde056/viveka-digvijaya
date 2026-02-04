@@ -13,7 +13,13 @@ viveka-digvijaya/
 │   ├── map.js              # Map initialization, marker placement, content loading
 │   └── timeline.js         # Timeline ruler functionality
 ├── data/
-│   ├── entries.json        # Central data store for all locations & content
+│   ├── chapters.json       # Index of all chapter files
+│   ├── chapters/           # Chapter data organized by travel era
+│   │   ├── 01_parivrajaka_india_1888-1893.json
+│   │   ├── 02_first_visit_west_1893-1897.json
+│   │   ├── 03_return_to_india_1897-1899.json
+│   │   ├── 04_second_visit_west_1899-1900.json
+│   │   └── 05_final_years_india_1901-1902.json
 │   ├── texts/
 │   │   └── en/             # English text content (markdown files)
 │   │       ├── chicago-parliament-welcome-response-1893.md
@@ -30,7 +36,9 @@ viveka-digvijaya/
 
 ## Adding New Entries
 
-### 1. Add Entry to `data/entries.json`
+### 1. Add Entry to Appropriate Chapter File
+
+Identify which era/chapter your entry belongs to and add it to the corresponding file in `data/chapters/`:
 
 ```json
 {
@@ -114,10 +122,11 @@ Create a markdown file in `data/texts/en/` with the address or lecture text:
 - **Google Fonts** - Typography (Bodoni Moda, Garamond)
 - **HTML5/CSS3/JavaScript** - Vanilla stack (no frameworks)
 
-## Data Schema (entries.json)
+## Data Schema
 
-Each entry follows a strict schema for consistency:
+Each entry in the chapter files follows a strict schema for consistency:
 
+- **sl_num**: Serial number within the chapter (for easy reference)
 - **id**: Unique identifier (date + slug format)
 - **date**: ISO format (YYYY-MM-DD)
 - **year**: Integer year for filtering
@@ -126,6 +135,8 @@ Each entry follows a strict schema for consistency:
 - **content.image_path**: URL or local path to photograph
 - **source**: Bibliographic citation information
 - **journey**: Linking between entries
+
+Chapter files are automatically loaded via `data/chapters.json` index.
 
 ## Historical Accuracy Notes
 
@@ -166,11 +177,14 @@ Attribution provided in individual entry source fields.
 
 To add new entries or correct information:
 
-1. Follow the JSON schema in `entries.json`
-2. Verify dates and coordinates from primary sources
-3. Add full citations in the `source` field
-4. Include `{lang}` placeholder in text paths for i18n compatibility
-5. Test marker display and content loading before committing
+1. Identify the appropriate chapter file based on travel era
+2. Follow the JSON schema (sl_num, id, date, location, content, source, journey)
+3. Increment `sl_num` sequentially within the chapter
+4. Verify dates and coordinates from primary sources
+5. Add full citations in the `source` field
+6. Include `{lang}` placeholder in text paths for i18n compatibility
+7. Update `data/chapters.json` if adding a new chapter file
+8. Test marker display and content loading before committing
 
 ---
 

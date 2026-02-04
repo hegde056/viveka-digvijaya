@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.1",
+  "chapter_id": "02_first_visit_west_1893-1897",
+  "chapter_title": "First Visit to the West",
+  "period": "1893–1897",
+  "description": "The historic journey to America beginning with the Parliament of the World's Religions in Chicago, followed by extensive lecture tours across America and Europe.",
+  "entries": [
+    {
+      "sl_num": 1,
+      "id": "1893-09-11-chicago-parliament",
+      "date": "1893-09-11",
+      "year": 1893,
+      "slug": "chicago-parliament-religions",
+      "location": {
+        "point": { "lat": 41.8781, "lon": -87.6298 },
+        "display_name": "Chicago, USA",
+        "historical_name": "Parliament of the World's Religions",
+        "region": { "macro": "West", "subregion": "North America" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Address at the Parliament of the World's Religions" },
+        "subtitle_i18n": { "en": "Sisters and Brothers of America" },
+        "text_path": "data/texts/{lang}/chicago-parliament-welcome-response-1893.md",
+        "image_path": null,
+        "caption_i18n": null,
+        "category": { "type": ["lecture"], "tags": ["parliament", "universal-religion", "west"] }
+      },
+      "source": {
+        "work": "Complete Works of Swami Vivekananda",
+        "volume": 1,
+        "page": 1,
+        "quote_range": "pp. 1–20",
+        "publisher": "Advaita Ashrama"
+      },
+      "journey": {
+        "arrival_mode": "sea",
+        "prev_id": null,
+        "next_id": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.1",
+  "chapter_id": "01_parivrajaka_india_1888-1893",
+  "chapter_title": "Parivrajaka: The Wandering Monk",
+  "period": "1888–1893",
+  "description": "The formative years of wandering across India as a parivrajaka (wandering monk), seeking spiritual wisdom and understanding the condition of the Indian masses.",
+  "entries": [
+    {
+      "sl_num": 1,
+      "id": "1892-belagavi-photograph",
+      "date": "1892-10-27",
+      "year": 1892,
+      "slug": "belagavi-photograph",
+      "location": {
+        "point": { "lat": 15.855986, "lon": 74.503517 },
+        "display_name": "Belagavi (Belgaum), India",
+        "historical_name": "Belgaum, Bombay Presidency",
+        "region": { "macro": "East", "subregion": "South Asia" }
+      },
+      "content": {
+        "available_langs": ["en"],
+        "title_i18n": { "en": "Photograph at Belagavi" },
+        "subtitle_i18n": { "en": "A Portrait in local attire" },
+        "text_path": null,
+        "image_path": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Swami_Vivekananda_in_Belgaum_October_1892.jpg",
+        "caption_i18n": { "en": "Swami Vivekananda at Belagavi, October 1892 (Photograph by Govinda Shrinivas Welling)" },
+        "category": { "type": ["gallery"], "tags": ["photograph", "historical", "portrait"] }
+      },
+      "source": {
+        "work": "Wikimedia / Sri Ramakrishna Math & Mission",
+        "volume": null,
+        "page": null,
+        "publisher": "Govinda Shrinivas Welling"
+      },
+      "journey": {
+        "arrival_mode": "land",
+        "prev_id": null,
+        "next_id": null
+      }
+    }
+  ]
+}

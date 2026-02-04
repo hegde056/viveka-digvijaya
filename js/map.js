@@ -52,12 +52,24 @@ var saffronIcon = new L.Icon({
 
 var currentLang = 'en';
 
-fetch('data/entries.json')
+// Load chapters index and then load all chapter files
+fetch('data/chapters.json')
     .then(res => res.json())
-    .then(data => {
+    .then(index => {
+        // Fetch all chapter files
+        const chapterPromises = index.chapters.map(chapterPath => 
+            fetch(chapterPath).then(res => res.json())
+        );
+        
+        return Promise.all(chapterPromises);
+    })
+    .then(chapters => {
         var allMarkers = [];
+        
+        // Combine all entries from all chapters
+        const allEntries = chapters.flatMap(chapter => chapter.entries || []);
 
-        data.entries.forEach(item => {
+        allEntries.forEach(item => {
             const lat = item.location.point.lat;
             const lng = item.location.point.lon;
             allMarkers.push([lat, lng]);

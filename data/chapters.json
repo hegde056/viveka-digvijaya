@@ -1,0 +1,9 @@
+{
+  "chapters": [
+    "data/chapters/01_parivrajaka_india_1888-1893.json",
+    "data/chapters/02_first_visit_west_1893-1897.json",
+    "data/chapters/03_return_to_india_1897-1899.json",
+    "data/chapters/04_second_visit_west_1899-1900.json",
+    "data/chapters/05_final_years_india_1901-1902.json"
+  ]
+}
