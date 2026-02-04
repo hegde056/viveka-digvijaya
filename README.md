@@ -10,7 +10,8 @@ viveka-digvijaya/
 ├── css/
 │   └── style.css           # All styling (map, sidebar, timeline, header)
 ├── js/
-│   ├── map.js              # Map initialization, marker placement, content loading
+│   ├── map.js              # Leaflet map initialization, marker rendering with offset handling
+│   ├── ui.js               # URL routing, navigation, sidebar coordination
 │   └── timeline.js         # Timeline ruler functionality
 ├── data/
 │   ├── chapters.json       # Index of all chapter files
@@ -42,8 +43,10 @@ Identify which era/chapter your entry belongs to and add it to the corresponding
 
 ```json
 {
+  "sl_num": 1,
   "id": "YYYY-MM-DD-location-slug",
   "date": "YYYY-MM-DD",
+  "date_precision": "exact",    // or "approximate", "month-only"
   "year": YYYY,
   "slug": "location-slug",
   "location": {
@@ -72,12 +75,14 @@ Identify which era/chapter your entry belongs to and add it to the corresponding
     "publisher": "Advaita Ashrama"
   },
   "journey": {
-    "arrival_mode": "sea",    // sea, land, boat
+    "arrival_mode": "sea",    // sea, land, boat, train
     "prev_id": "previous-entry-id",
     "next_id": "next-entry-id"
   }
 }
 ```
+
+**Note:** For multiple lectures at the same location, offset coordinates slightly (0.0005-0.0008 degrees, ~50-90m) to prevent marker overlap while keeping them visually clustered.
 
 ### 2. Add Text Content (if Lecture)
 
@@ -107,7 +112,9 @@ Create a markdown file in `data/texts/en/` with the address or lecture text:
 ## Features
 
 - **Interactive World Map** - Satellite imagery with Leaflet.js mapping
-- **Historical Timeline** - Visual ruler showing chronological journey
+- **URL-based Navigation** - Shareable links to individual lectures (e.g., `#colombo-first-address`)
+- **Marker Highlighting** - Visual feedback with enlarged icons for selected lectures
+- **Historical Timeline** - Visual ruler showing chronological journey (1863-1902)
 - **Multilingual Support** - Ready for multiple language content (currently English)
 - **Mixed Content Types** - Display both lecture texts and historical photographs
 - **Responsive Sidebar** - Click markers to read full addresses or view images
@@ -124,16 +131,26 @@ Create a markdown file in `data/texts/en/` with the address or lecture text:
 
 ## Data Schema
 
-Each entry in the chapter files follows a strict schema for consistency:
-
-- **sl_num**: Serial number within the chapter (for easy reference)
-- **id**: Unique identifier (date + slug format)
+Each entry in the chapter files follows a stric: `YYYY-MM-DD-location-slug`)
 - **date**: ISO format (YYYY-MM-DD)
+- **date_precision**: Accuracy indicator ("exact", "approximate", "month-only")
 - **year**: Integer year for filtering
+- **slug**: URL-friendly identifier for navigation
 - **location.point**: Latitude/longitude coordinates
 - **content.text_path**: Path to markdown text (uses `{lang}` placeholder)
 - **content.image_path**: URL or local path to photograph
 - **source**: Bibliographic citation information
+- **journey**: Linking between entries (prev_id, next_id, arrival_mode)
+
+Chapter files are automatically loaded via `data/chapters.json` index.
+
+## URL Navigation
+
+Share specific lectures using hash-based URLs:
+- Format: `https://yourdomain.com/#slug-name`
+- Example: `https://yourdomain.com/#colombo-first-address`
+- The UI automatically highlights the marker and opens the sidebar
+- Closing the sidebar returns to home URL (no hash)
 - **journey**: Linking between entries
 
 Chapter files are automatically loaded via `data/chapters.json` index.
